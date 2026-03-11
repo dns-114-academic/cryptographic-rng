@@ -1,6 +1,6 @@
 # Cryptographic RNG — Implementation & Attacks
 
-**Course project** | ENSIBS — Jan.–Feb. 2026 | Python
+**Course project** | école d'ingénieurs — Jan.–Feb. 2026 | Python
 
 ## Overview
 
