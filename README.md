@@ -1,39 +1,44 @@
-# Cryptographic RNG — Implementation & Attacks
+# Cryptographic RNG — Implémentation & Attaques
 
-**Course project** | école d'ingénieurs — Jan.–Feb. 2026 | Python
+**Projet Cybersécurité / Cryptographie** | école d'ingénieurs — Jan.–Fév. 2026 | Python (groupe de 3, 7 séances)
 
-## Overview
+## Présentation
 
-Implementation and comparative analysis of PRNG/CSPRNG families, combined with practical cryptanalytic attacks.
+Implémentation et analyse comparative de générateurs de nombres pseudo-aléatoires (PRNG/CSPRNG) en Python. Tests statistiques rigoureux et démonstrations d'attaques pédagogiques.
 
-## Generators Implemented
+## Générateurs implémentés
 
-| Generator | Type | Notes |
-|---|---|---|
+| Générateur | Type | Notes |
+|:---|:---|:---|
 | LCG | PRNG | Linear Congruential Generator |
-| MT19937 | PRNG | Mersenne Twister (Python's `random`) |
+| MT19937 | PRNG | Mersenne Twister (`random` Python) |
+| Box-Muller | PRNG | Distribution gaussienne |
 | BBS | CSPRNG | Blum-Blum-Shub |
 | AES-CTR DRBG | CSPRNG | NIST SP 800-90A |
 | AES-CBC PRNG | CSPRNG | CBC-mode based |
+| `os.urandom` | CSPRNG | Entropie système |
+| XOR NRBG | CSPRNG | Construction hybride |
 
-## Statistical Validation
+## Tests statistiques
 
-- Chi-squared test
-- Shannon entropy
-- Kolmogorov-Smirnov test
-- Frequency / monobit test (NIST)
+- **Entropie de Shannon** — mesure d'aléatoire
+- **Chi-carré** — uniformité de la distribution
+- **Autocorrélation** — lags 1, 8, ...
+- **Kolmogorov-Smirnov** — comparaison de distributions
 
-## Attacks
+## Attaques démontrées
 
-- **LCG** — seed recovery from output sequence
-- **MT19937** — full state reconstruction from 624 consecutive outputs
-- **AES-CTR** — nonce reuse attack
-- **AES-CBC** — predictable IV attack
+| Attaque | Cible | Méthode |
+|:---|:---|:---|
+| Récupération de graine | LCG | Résolution linéaire ou bruteforce |
+| Reconstruction d'état | MT19937 | 624 sorties 32-bits suffisent |
+| Fuite XOR | AES-CTR | Réutilisation de nonce |
+| IV prévisible | AES-CBC | Prédiction du prochain bloc |
 
 ## Stack
 
-`Python` · `pycryptodome` · `numpy` · `scipy`
+`Python` · `numpy` · `scipy` · `matplotlib` · `pycryptodome`
 
 ---
 
-*Academic project — école d'ingénieurs*
+*Projet académique — école d'ingénieurs*
