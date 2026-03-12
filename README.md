@@ -116,20 +116,20 @@ This verifies all 7 generators, 4 statistical tests, and 2 attacks.
 
 ```bash
 # Generators
-python GENERATORS/PRNG_non_cryptographic/lcg.py
-python GENERATORS/PRNG_non_cryptographic/mersenne_twister.py
-python GENERATORS/PRNG_Gaussian_distribution/box_muller.py
-python GENERATORS/CSPRNG/bbs.py
-python GENERATORS/CSPRNG/hash_drbg.py
-python GENERATORS/CSPRNG/os_random.py
-python GENERATORS/Non_deterministic_and_hybrid_generators/xor_nrbg.py
+python generators/prng_non_cryptographic/lcg.py
+python generators/prng_non_cryptographic/mersenne_twister.py
+python generators/prng_Gaussian_distribution/box_muller.py
+python generators/csprng/bbs.py
+python generators/csprng/hash_drbg.py
+python generators/csprng/os_random.py
+python generators/non_deterministic_and_hybrid_generators/xor_nrbg.py
 
 # Statistical tests
-python STATISTICS/test_statistique.py
+python statistics/test_statistique.py
 
 # Attacks
-python ATTACKS/lcg_seed_recovery.py
-python ATTACKS/mt19937_state_recovery.py
+python attacks/lcg_seed_recovery.py
+python attacks/mt19937_state_recovery.py
 ```
 
 ### Expected output of `_run_all_tests.py`
