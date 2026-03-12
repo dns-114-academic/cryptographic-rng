@@ -1,0 +1,7 @@
+# .gitignore minimal pour Python
+echo "__pycache__/
+*.pyc
+*.pyo
+.env
+*.zip" > .gitignore
+git add .gitignore
